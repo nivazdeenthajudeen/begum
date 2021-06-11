@@ -14,8 +14,8 @@ import org.slf4j.LoggerFactory;
 
 @Component(service = Servlet.class, immediate = true, property = { 
 		"sling.servlet.paths=/api/custommail",
-		"sling.servlet.methods=GET", 
-		"sling.servlet.methods=POST" })
+		"sling.servlet.methods=GET",
+		"sling.servlet.methods=POST"})
 public class FormMailServlet extends SlingAllMethodsServlet {
 
 	private static final long serialVersionUID = -5818604642186300929L;
@@ -25,13 +25,17 @@ public class FormMailServlet extends SlingAllMethodsServlet {
 	@Override
 	protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response)
 			throws ServletException, IOException {
-		logger = LoggerFactory.getLogger(getClass());
+		Logger logger = LoggerFactory.getLogger(this.getClass().getName());
+		logger.debug("GET Method Called");
+		
 	}
-
+	
 	@Override
 	protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response)
 			throws ServletException, IOException {
-		logger = LoggerFactory.getLogger(getClass());
+		Logger logger = LoggerFactory.getLogger(this.getClass().getName());
+		logger.debug("POST Method Called");
+		
 	}
 
 }
