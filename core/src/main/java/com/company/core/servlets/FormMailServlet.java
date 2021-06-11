@@ -13,12 +13,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @Component(service = Servlet.class, immediate = true, property = { 
-		"sling.servlet.methods=GET",
-		"sling.servlet.methods=POST", 
-		"sling.servlet.paths=/api/customformaction" })
-public class MailServlet extends SlingAllMethodsServlet {
+		"sling.servlet.paths=/api/custommail",
+		"sling.servlet.methods=GET", 
+		"sling.servlet.methods=POST" })
+public class FormMailServlet extends SlingAllMethodsServlet {
 
-	private static final long serialVersionUID = -5639191410226442133L;
+	private static final long serialVersionUID = -5818604642186300929L;
 
 	private Logger logger;
 
@@ -32,7 +32,6 @@ public class MailServlet extends SlingAllMethodsServlet {
 	protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response)
 			throws ServletException, IOException {
 		logger = LoggerFactory.getLogger(getClass());
-
 	}
 
 }
